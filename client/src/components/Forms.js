@@ -46,7 +46,7 @@ const Forms = () => {
       console.log(JSON.stringify(values, null, 2));
       // axios post
       axios
-        .post('http://localhost:4000/reports', values)
+        .post('reports', values)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
       setSubmitted(true);

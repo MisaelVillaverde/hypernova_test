@@ -1,21 +1,21 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
-const app = express();
 const cors = require('cors');
 require('dotenv/config');
+
+const app = express();
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the React App
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 // Import Routes
 const reportsRoute = require('./routes/reports');
 app.use('/reports', reportsRoute);
-
-// Routes
-app.get('/', (req, res) => {
-  res.send('Home');
-});
 
 // Connect to DB
 mongoose.connect(
@@ -28,6 +28,7 @@ mongoose.connect(
 );
 
 // Listen
-app.listen(4000, () => {
-  console.log('server running on localhost:4000');
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`server running on port ${port}`);
 });

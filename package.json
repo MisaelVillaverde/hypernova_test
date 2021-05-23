@@ -1,13 +1,15 @@
 {
-  "name": "server",
+  "name": "reporte-gastos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon index.js",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "misaelvillaverde",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

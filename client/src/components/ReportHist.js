@@ -9,7 +9,7 @@ const ReportHist = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/reports')
+      .get('reports')
       .then((res) => {
         console.log(res.data);
         setInfo(res.data);

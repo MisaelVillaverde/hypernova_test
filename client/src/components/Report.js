@@ -18,28 +18,27 @@ const Report = () => {
   const [report, setReport] = useState({});
   const [total, setTotal] = useState(0);
   const [deleted, setDeleted] = useState(false);
-
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/reports/${id}`)
+      .get(`reports/${id}`)
       .then((res) => {
         setReport(res.data);
       })
       .catch((err) => console.log(`axios error: ${err}`));
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     let res = report?.info?.table?.reduce((acc, actual) => ({
       total: acc.total + actual.total,
     }));
     setTotal(res?.total.toFixed(2));
-  });
+  }, [report?.info?.table]);
 
   const deleteReport = () => {
     axios
-      .delete(`http://localhost:4000/reports/${id}`)
+      .delete(`reports/${id}`)
       .then((res) => {
         console.log(res.data);
       })
