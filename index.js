@@ -16,7 +16,7 @@ app.use('/reports', reportsRoute);
 
 // Connect to DB
 mongoose.connect(
-  process.env.MONGODB_URI || process.env.DB_CONNECTION,
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -37,5 +37,4 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
-  console.log(`Production: ${process.env.NODE_ENV ? 'true' : 'false'}`);
 });

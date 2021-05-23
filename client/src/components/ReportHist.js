@@ -11,7 +11,6 @@ const ReportHist = () => {
     axios
       .get('/reports')
       .then((res) => {
-        console.log(res.data);
         setInfo(res.data);
       })
       .catch((err) => console.log(`axios error: ${err}`));
