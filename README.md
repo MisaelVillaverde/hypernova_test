@@ -4,7 +4,7 @@
 
 - React Router
 - Styled Components
-- Formulario con Formik y validación con yup.
+- Form with Formik and validation with yup.
 - Axios
 
 ## BackEnd

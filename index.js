@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv/config');
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const app = express();
 
@@ -31,4 +31,5 @@ mongoose.connect(
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
+  console.log(`Production: ${process.env.NODE_ENV ? 'true' : 'false'}`);
 });
