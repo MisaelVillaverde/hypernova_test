@@ -37,10 +37,10 @@ const ReportHist = () => {
               {data.concept}
             </Text>
             <Text width='30%' ta='center'>
-              {data.info.name}
+              {data.info?.name}
             </Text>
             <Text width='30%' ta='right'>
-              {data.dateFrom.slice(0, 10)}
+              {data.dateFrom?.slice(0, 10)}
               <SLink to={`/${data._id}`}>
                 <i className='fas fa-share'></i>
               </SLink>
