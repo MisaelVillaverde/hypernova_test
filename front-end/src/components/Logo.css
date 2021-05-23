@@ -1,0 +1,30 @@
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 2rem;
+  color: #000;
+  width: 140px;
+}
+
+.logo__img {
+  width: 100px;
+}
+
+ul {
+  position: absolute;
+  left: 8rem;
+  list-style: none;
+}
+
+li {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.labs {
+  background: -webkit-linear-gradient(#21c2b1, #f2de68);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
