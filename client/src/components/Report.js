@@ -110,8 +110,8 @@ const Report = () => {
               Total
             </Title2>
           </Expenses>
-          {report.info?.table?.map((row) => (
-            <Expenses>
+          {report.info?.table?.map((row, index) => (
+            <Expenses key={index}>
               <Text width='25%' ta='center'>
                 {row.date?.slice(0, 10)}
               </Text>
