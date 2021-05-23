@@ -9,7 +9,7 @@ const ReportHist = () => {
 
   useEffect(() => {
     axios
-      .get('/reports/')
+      .get('/api/reports')
       .then((res) => {
         setInfo(res.data);
       })

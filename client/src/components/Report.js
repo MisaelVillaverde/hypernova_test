@@ -22,7 +22,7 @@ const Report = () => {
 
   useEffect(() => {
     axios
-      .get(`/reports/${id}`)
+      .get(`/api/reports/${id}`)
       .then((res) => {
         setReport(res.data);
       })
@@ -38,7 +38,7 @@ const Report = () => {
 
   const deleteReport = () => {
     axios
-      .delete(`/reports/${id}`)
+      .delete(`/api/reports/${id}`)
       .then((res) => {
         console.log(res.data);
       })

@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Import Routes
 const reportsRoute = require('./routes/reports');
-app.use('/reports', reportsRoute);
+app.use('/api/reports', reportsRoute);
 
 // Connect to DB
 mongoose.connect(
